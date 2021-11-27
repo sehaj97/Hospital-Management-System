@@ -1,3 +1,3 @@
-const Departments = require('./Departments.js');
+const Departments = require('./departments');
 
 module.exports = { Departments }

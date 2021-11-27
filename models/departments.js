@@ -23,3 +23,5 @@ class Departments extends Model{};
             modelName: 'departments'
         }
     );
+
+    module.exports = Departments;
