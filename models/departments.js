@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Departments extends Model{};
@@ -11,7 +11,7 @@ class Departments extends Model{};
                     autoIncrement: true
             },
             DepartmentName: {
-                type: DataTypes.ENUM({
+                type: Sequelize.ENUM({
                     values: ['Orthopedic','Psychiatric','Gynecology','Dermatology','Neurology','Cardiology','Ophthalmology','Oncology','Rehabilitation Services -- OT /PT /Kin /SLP',
                     'Administration']
                 }),
