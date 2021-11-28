@@ -11,7 +11,10 @@ class Departments extends Model{};
                     autoIncrement: true
             },
             DepartmentName: {
-                type: DataTypes.STRING,
+                type: DataTypes.ENUM({
+                    values: ['Orthopedic','Psychiatric','Gynecology','Dermatology','Neurology','Cardiology','Ophthalmology','Oncology','Rehabilitation Services -- OT /PT /Kin /SLP',
+                    'Administration']
+                }),
                 allowNull: false,
                 validate:{
                     isIn: {
