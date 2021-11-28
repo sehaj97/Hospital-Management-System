@@ -17,16 +17,10 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        include: [
-            {
-                model: Specialists,
-                attributes: ['id', 'SpecialistName', 'Speciality']
-            },
-        ]
     })    
         .then(dbSpecialistData => {
             if(!dbSpecialistData){
-                res.status(404).json({ message: 'No specialist found with this id'});
+                res.status(404).json({ message: 'No specialist found with this id' });
                 return;
             }
             res.json(dbSpecialistData);
