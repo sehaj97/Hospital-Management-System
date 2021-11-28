@@ -12,7 +12,14 @@ class Departments extends Model{};
             },
             DepartmentName: {
                 type: DataTypes.STRING,
-                allowNull: false
+                allowNull: false,
+                validate:{
+                    isIn: {
+                        args: [['Orthopedic','Psychiatric','Gynecology','Dermatology','Neurology','Cardiology','Ophthalmology','Oncology','Rehabilitation Services -- OT /PT /Kin /SLP',
+                        'Administration']],
+                        msg: 'Department name must match any of following:  Orthopedic, Psychiatric, Gynecology, Dermatology, Neurology, Cardiology, Ophthalmology, Oncology, Rehabilitation Services -- OT /PT /Kin /SLP, Administration'
+                    }
+                }
             }
         },
         {
