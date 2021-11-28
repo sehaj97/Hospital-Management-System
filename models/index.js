@@ -1,3 +1,5 @@
 const Departments = require('./departments');
 
-module.exports = { Departments }
+const Patients = require('./patients');
+
+module.exports = { Departments, Patients }

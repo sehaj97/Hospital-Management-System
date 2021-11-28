@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Patients extends Model{};
@@ -10,15 +10,16 @@ class Patients extends Model{};
                 primaryKey: true,
                 autoIncrement: true
             },
+
             PatientName: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
+        
             PatientStatus: {
-                type: DataTypes.ENUM(
-                    "Active",
-                    "Discharged"
-                ),
+                type: Sequelize.ENUM ({ 
+                    values: ['Active', 'Discharged'] 
+                }),
                 allowNull: false,
                 validate: {
                     isIn: {
@@ -27,11 +28,13 @@ class Patients extends Model{};
                     }
                 }
             },
+
             isIPD: { 
                 type: DataTypes.BOOLEAN, 
                 allowNull: false, 
                 defaultValue: false
             },
+
             isOPD: {
                 type: DataTypes.BOOLEAN,
                 allowNull: false,
