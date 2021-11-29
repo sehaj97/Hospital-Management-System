@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Departments extends Model{};
@@ -11,8 +11,18 @@ class Departments extends Model{};
                     autoIncrement: true
             },
             DepartmentName: {
-                type: DataTypes.STRING,
-                allowNull: false
+                type: Sequelize.ENUM({
+                    values: ['Orthopedic','Psychiatric','Gynecology','Dermatology','Neurology','Cardiology','Ophthalmology','Oncology','Rehabilitation Services -- OT /PT /Kin /SLP',
+                    'Administration']
+                }),
+                allowNull: false,
+                validate:{
+                    isIn: {
+                        args: [['Orthopedic','Psychiatric','Gynecology','Dermatology','Neurology','Cardiology','Ophthalmology','Oncology','Rehabilitation Services -- OT /PT /Kin /SLP',
+                        'Administration']],
+                        msg: 'Department name must match any of following:  Orthopedic, Psychiatric, Gynecology, Dermatology, Neurology, Cardiology, Ophthalmology, Oncology, Rehabilitation Services -- OT /PT /Kin /SLP, Administration'
+                    }
+                }
             }
         },
         {
