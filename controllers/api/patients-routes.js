@@ -14,9 +14,10 @@ router.get('/', (req, res) => {
 // post patient
 router.post('/', (req, res) => {
     Patients.create({
-        PatientName: req.body.PatientName
+        PatientName: req.body.PatientName,
+        PatientStatus: req.body.PatientStatus
     })
-    .then(dbPatientData => {
+    .then(dbPatientData => { 
         res.json(dbPatientData);
     })
     .catch(err => {
