@@ -23,7 +23,7 @@ class Patients extends Model{};
                 allowNull: false,
                 validate: {
                     isIn: {
-                        args: ['Active', 'Discharged'],
+                        args: [['Active', 'Discharged']],
                             msg: "Must be Active or Discharged"
                     }
                 }
