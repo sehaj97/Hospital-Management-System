@@ -65,24 +65,4 @@ router.put('/:id', (req, res) => {
         res.status(500).json(err);
       });
 });
-
-
-router.delete('/:id', (req, res) => {
-  Patients.destroy({
-      where: {
-          id: req.params.id
-      }
-  })
-  .then(dbPatientData => {
-      if (!dbPatientData) {
-          res.status(404).json({ message: 'No specialist found with this id' });
-          return;
-      }
-      res.json(dbPatientData);
-  })
-  .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-  });
-});
 module.exports = router;
