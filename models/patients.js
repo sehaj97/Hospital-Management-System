@@ -15,19 +15,24 @@ class Patients extends Model{};
                 type: DataTypes.STRING,
                 allowNull: false
             },
+
+            // PatientMedid: {
+            //     type: DataTypes.STRING,
+            //     allowNull: false
+            // }
         
-            // PatientStatus: {
-            //     type: Sequelize.ENUM ({ 
-            //         values: ['Active', 'Discharged'] 
-            //     }),
-            //     allowNull: false,
-            //     validate: {
-            //         isIn: {
-            //             args: [['Active', 'Discharged']],
-            //                 msg: "Must be Active or Discharged"
-            //         }
-            //     }
-            // },
+            PatientStatus: {
+                type: Sequelize.ENUM ({ 
+                    values: ['Active', 'Discharged'] 
+                }),
+                allowNull: false,
+                validate: {
+                    isIn: {
+                        args: [['Active', 'Discharged']],
+                            msg: "Must be Active or Discharged"
+                    }
+                }
+            },
 
             // isIPD: { 
             //     type: DataTypes.BOOLEAN, 

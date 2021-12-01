@@ -1,14 +1,16 @@
 async function patientFormHandler(event) {
     event.preventDefault();
     const PatientName = document.querySelector('#patient-name').value.trim();
-    // const PatientId = document.querySelector('#patient-id').value.trim();
-    // if (PatientName && PatientMSID) {
-
-    if (PatientName) {
+    // const PatientMedid = document.querySelector('#patient-medid').value.trim();
+    const PatientStatus = document.querySelector('#patient-status').value.trim();
+    // if (PatientName && PatientMedid) {
+    if (PatientName && PatientStatus) {
         const response = await fetch('/api/patients', {
           method: 'post',
           body: JSON.stringify({
-            PatientName
+            PatientName,
+            // PatientMedid,
+            PatientStatus
           }),
           headers: { 'Content-Type': 'application/json' }
         });
