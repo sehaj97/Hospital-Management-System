@@ -39,6 +39,23 @@ class Patients extends Model{};
                 type: DataTypes.BOOLEAN,
                 allowNull: false,
                 defaultValue: false
+            },
+            prescription:{
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            diagnosis:{
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            reports:{
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            isVaccinated:{
+                type: DataTypes.BOOLEAN, 
+                allowNull: false, 
+                defaultValue: false
             }
         },
         {
