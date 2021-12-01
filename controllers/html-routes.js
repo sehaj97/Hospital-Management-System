@@ -20,6 +20,14 @@ router.get('/Medisearch/Specialists/add', (req, res) => {
   res.render('SpecialistForm');
 });
 
+router.get('/Medisearch/Departments', (req, res) => {
+  res.render('Department');
+});
+
+router.get('/Medisearch/Departments/add', (req, res) => {
+  res.render('DepartmentsForm');
+});
+
 router.get('/Medisearch/PatientJourney', (req, res) => {
   res.render('Medisearch');
 });
