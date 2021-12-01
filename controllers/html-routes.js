@@ -12,11 +12,11 @@ router.get('/Medisearch/Departments', (req, res) => {
     res.render('Medisearch');
 });
 
-router.get('/Medisearch/Departments', (req, res) => {
+router.get('/Medisearch/Specialists', (req, res) => {
   res.render('Medisearch');
 });
 
-router.get('/Medisearch/Departments', (req, res) => {
+router.get('/Medisearch/PatientJourney', (req, res) => {
   res.render('Medisearch');
 });
 
