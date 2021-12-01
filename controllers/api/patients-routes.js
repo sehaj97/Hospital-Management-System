@@ -16,7 +16,12 @@ router.post('/', (req, res) => {
     Patients.create({
         PatientName: req.body.PatientName,
         // PatientMedid: req.body.PatientMedid,
-        PatientStatus: req.body.PatientStatus
+        PatientStatus: req.body.PatientStatus,
+        // isIPD: req.body.isIPD,
+        // isOPD: req.body.isOPD,
+        // prescription: req.body.prescription,
+        // diagnosis: req.body.diagnosis,
+        // reports: req.body.reports
     })
     .then(dbPatientData => { 
         res.json(dbPatientData);

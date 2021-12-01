@@ -45,18 +45,22 @@ class Patients extends Model{};
             //     allowNull: false,
             //     defaultValue: false
             // },
-            // prescription:{
+
+            // prescription: {
             //     type: DataTypes.STRING,
             //     allowNull: false
             // },
+
             // diagnosis:{
             //     type: DataTypes.STRING,
             //     allowNull: false
             // },
+
             // reports:{
             //     type: DataTypes.STRING,
             //     allowNull: false
             // },
+
             // isVaccinated:{
             //     type: DataTypes.BOOLEAN, 
             //     allowNull: false, 
