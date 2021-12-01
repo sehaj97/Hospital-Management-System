@@ -20,8 +20,16 @@ router.get('/Medisearch/Specialists/add', (req, res) => {
   res.render('SpecialistForm');
 });
 
-router.get('/Medisearch/PatientJourney', (req, res) => {
-  res.render('Medisearch');
+router.get('/Medisearch/Patients', (req, res) => {
+  res.render('Patients');
 });
+
+router.get('/Medisearch/Patients/add', (req, res) => {
+  res.render('PatientForm');
+});
+
+// router.get('/Medisearch/PatientJourney', (req, res) => {
+//   res.render('Medisearch');
+// });
 
 module.exports = router;
