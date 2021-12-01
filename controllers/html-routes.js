@@ -13,7 +13,11 @@ router.get('/Medisearch/Departments', (req, res) => {
 });
 
 router.get('/Medisearch/Specialists', (req, res) => {
-  res.render('Medisearch');
+  res.render('Specialists');
+});
+
+router.get('/Medisearch/Specialists/add', (req, res) => {
+  res.render('SpecialistForm');
 });
 
 router.get('/Medisearch/PatientJourney', (req, res) => {
