@@ -19,9 +19,10 @@ router.post('/', (req, res) => {
         PatientStatus: req.body.PatientStatus,
         // isIPD: req.body.isIPD,
         // isOPD: req.body.isOPD,
-        // prescription: req.body.prescription,
-        // diagnosis: req.body.diagnosis,
+        prescription: req.body.prescription,
+        diagnosis: req.body.diagnosis
         // reports: req.body.reports
+        // isVaccinated: req.body.isVaccinated
     })
     .then(dbPatientData => { 
         res.json(dbPatientData);

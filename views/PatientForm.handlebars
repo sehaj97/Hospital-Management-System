@@ -13,7 +13,7 @@
         <label for="patient-status" class="form-label">Patient Status</label>
         <select id="patient-status" class="form-select">
             <option selected disabled>Please choose one of the below:</option>
-            <option>Active</option>
+            <option>Active</option> 
             <option>Discharged</option>
         </select>
     </div>
@@ -22,21 +22,21 @@
         <label for="patient-type" class="form-label">Is this patient considered: Inpatient or Outpatient?</label>
         <div class="form-check">
             <input type="radio" class="form-check-input" id="isIPD" name="optradio" value="isIPD" checked>
-            <label class="form-check-label" for="radio1">Inpatient (IPD)</label>
+            <label class="form-check-label" for="isIPD">Inpatient (IPD)</label>
         </div>
         <div class="form-check">
             <input type="radio" class="form-check-input" id="isOPD" name="optradio" value="isOPD" checked>
-            <label class="form-check-label" for="radio1">Outpatient (OPD)</label> 
+            <label class="form-check-label" for="isOPD">Outpatient (OPD)</label> 
         </div>
     </div> --}}
 
 
-    {{!-- <div class="mb-3">
-        <label for="prescription" class="form-label">Prescription - Rx </label>
+    <div class="mb-3">
+        <label for="prescription" class="form-label">Prescription - Rx</label>
         <input type="text" class="form-control" id="prescription">
-    </div> --}}
+    </div>
     
-    {{!-- <div class="mb-3">
+    <div class="mb-3">
         <label for="diagnosis" class="form-label">Diagnosis - Dx</label>
         <div class="form-floating mb-3">
             <label for="diagnosis"></label>
@@ -44,12 +44,27 @@
        </div>
     </div>
 
-    <div class="mb-3">
+    {{!-- <div class="mb-3">
         <label for="reports" class="form-label">Reports</label>
         <div class="form-floating mb-3">
             <label for="reports"></label>
             <textarea class="form-control" placeholder="Add a comment here" id="reports" style="height: 100px"></textarea>
        </div>
+    </div> --}}
+
+    {{!-- <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="isVaccinated" id="isVaccinated">
+        <label class="form-check-label" for="isVaccinated">
+            COVID-19 Vaccination Status: VACCINATED 
+        </label>
+    </div> --}}
+
+    {{!-- <div class="form-check mb-3">
+        <label for="isVaccinated" class="form-label">Covid-19 Vaccination Status:</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="isVaccinated" name="optradio" value="isVaccinated" checked>
+            <label class="form-check-label" for="isVaccinated">Vaccinated</label>
+        </div>
     </div> --}}
 
   <button type="submit" class="btn btn-primary">Add New Patient</button>

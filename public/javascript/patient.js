@@ -5,24 +5,19 @@ async function patientFormHandler(event) {
     const PatientStatus = document.querySelector('#patient-status').value.trim();
     // const isIPD = document.querySelector('#isIPD').value.trim();
     // const isOPD = document.querySelector('#isOPD').value.trim();
-    // const prescription = document.querySelector('#prescription').value.trim();
-    // const diagnosis = document.querySelector('#diagnosis').value.trim();
+    const prescription = document.querySelector('#prescription').value.trim();
+    const diagnosis = document.querySelector('#diagnosis').value.trim();
     // const reports = document.querySelector('#reports').value.trim();
+    // const isVaccinated = document.querySelector('#isVaccinated').value.trim();
 
-
-    // if (&& PatientMedid && diagnosis && reports ) {
-    if (PatientName && PatientStatus) {
+    if (PatientName && PatientStatus && prescription && diagnosis) {
         const response = await fetch('/api/patients', {
           method: 'post',
           body: JSON.stringify({
             PatientName,
-            // PatientMedid,
             PatientStatus,
-            // isIPD,
-            // isOPD,
-            // prescription, 
-            // diagnosis,
-            // reports
+            prescription,
+            diagnosis
           }),
           headers: { 'Content-Type': 'application/json' }
         });
