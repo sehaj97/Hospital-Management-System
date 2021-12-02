@@ -10,10 +10,6 @@ router.get('/Medisearch', (req, res) => {
   res.render('Medisearch');
 });
 
-router.get('/Medisearch/Departments', (req, res) => {
-    res.render('Medisearch');
-});
-
 router.get('/Medisearch/Specialists', (req, res) => {
   res.render('Specialists');
 });
@@ -23,7 +19,7 @@ router.get('/Medisearch/Specialists/add', (req, res) => {
 });
 
 router.get('/Medisearch/Departments', (req, res) => {
-  res.render('Department');
+  res.render('Departments');
 });
 
 router.get('/Medisearch/Departments/add', (req, res) => {
