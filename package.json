@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sehaj97/Hospital-Management-System#readme",
   "devDependencies": {
+    "animate.css": "^4.1.1",
     "argon2": "^0.28.3",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",

@@ -53,8 +53,12 @@ router.get('/Medisearch/Departments/View', (req, res) => {
     })
         .then(dbDepartmentData => {
             const departments = dbDepartmentData.map(department => department.get({ plain: true }));
-
-            res.render('DepartmentView', {departments});
+            if (req.session.loggedIn) {
+              res.render('DepartmentView', {departments, 
+                loggedIn: req.session.loggedIn});
+              return;
+            }
+            res.render('Login');
         })
         .catch(err => {
             console.log(err);

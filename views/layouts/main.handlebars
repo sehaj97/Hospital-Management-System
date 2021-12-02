@@ -5,16 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+  />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>MEDiSEARCH</title>
   </head>
-  <body style="background-image: url('images/bg-1.jpg');background-size: cover;">
+  <body style="background-image: url('/images/bg-1.jpg');background-size: cover;">
       <nav class="navbar navbar-light bg-dark justify-content-between">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/healthcare.png" alt="" width="10%" height="10%" class="d-inline-block">
+            <a class="navbar-brand" href="/Medisearch">
+                <img src="/images/healthcare.png" alt="" width="10%" height="10%" class="d-inline-block">
                 <h1 class="text-white d-inline-block" width="6%" height="6%">MEDiSEARCH</h1>
             </a>
             {{#if loggedIn}}
@@ -24,7 +31,9 @@
     </nav>
       {{{body}}}
       
-
+<footer class =" p-3 text-center ">
+  &copy; 2021 Team Ares(Coding Bootcamp) @ University of Toronto
+</footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     {{#if loggedIn}}
