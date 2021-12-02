@@ -34,18 +34,19 @@ class Patients extends Model{};
                 }
             },
 
-            // isIPD: { 
-            //     type: DataTypes.BOOLEAN, 
-            //     allowNull: false, 
-            //     defaultValue: false
-            // },
-
-            // isOPD: {
-            //     type: DataTypes.BOOLEAN,
-            //     allowNull: false,
-            //     defaultValue: false
-            // },
-
+            PatientType: {
+                type: Sequelize.ENUM ({ 
+                    values: ['Inpatient', 'Outpatient'] 
+                }),
+                allowNull: false,
+                validate: {
+                    isIn: {
+                        args: [['Inpatient', 'Outpatient']],
+                            msg: "Must be Inpatient or Outpatient"
+                    }
+                }
+            },
+    
             prescription: {
                 type: DataTypes.STRING,
                 allowNull: false
@@ -54,18 +55,18 @@ class Patients extends Model{};
             diagnosis:{
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+
+            reports:{
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+
+            isVaccinated: {
+                type: Sequelize.BOOLEAN, 
+                allowNull: false, 
+                defaultValue: false
             }
-
-            // reports:{
-            //     type: DataTypes.STRING,
-            //     allowNull: false
-            // },
-
-            // isVaccinated: {
-            //     type: DataTypes.BOOLEAN, 
-            //     allowNull: false, 
-            //     defaultValue: false
-            // }
         },
         {
             sequelize,
