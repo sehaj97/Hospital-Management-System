@@ -1,0 +1,27 @@
+<table class="table caption-top">
+  <caption>Patients</caption>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">PatientName</th>
+      <th scope="col">PatientStatus</th>
+      <th scope="col">PatientType</th>
+      <th scope="col">Prescription</th>
+      <th scope="col">Diagnosis</th>
+      <th scope="col">Reports</th>
+      <th scope="col">Vaccination Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{patient.id}}</th>
+      <td>{{patient.PatientName}}</td>
+      <td>{{patient.PatientStatus}}</td>
+      <td>{{patient.PatientType}}</td>
+      <td>{{patient.prescription}}</td>
+      <td>{{patient.diagnosis}}</td>
+      <td>{{patient.reports}}</td>
+      <td>{{patient.isVaccinated}}</td>
+    </tr>
+  </tbody>
+</table>

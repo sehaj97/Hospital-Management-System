@@ -131,12 +131,52 @@ router.get('/Medisearch/PatientJourney', (req, res) => {
 });
 
 router.get('/Medisearch/Patients', (req, res) => {
-  res.render('Patients');
+  if (req.session.loggedIn) {
+    res.render('Patients', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Patients/add', (req, res) => {
-  res.render('PatientForm');
+  if (req.session.loggedIn) {
+    res.render('PatientForm', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
+
+router.get('/Medisearch/Patients/View', (req, res) => {
+  console.log('==============');
+    Patients.findAll({
+        attributes: [
+            'id',
+            'PatientName',
+            'PatientStatus',
+            'PatientType',
+            'prescription',
+            'diagnosis',
+            'reports',
+            'isVaccinated'
+        ]
+    })
+        .then(dbPatientData => {
+            const patients = dbPatientData.map(patient => patient.get({ plain: true }));
+
+            res.render('PatientsView', {patients});
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
+
 
 router.get('/Medisearch/Departments', (req, res) => {
   if (req.session.loggedIn) {
