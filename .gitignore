@@ -103,6 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-
-#local to our own machines
+# removing .env to handle error on server
 .env

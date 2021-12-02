@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// const sequelize = require('../../config/connection');
 const { Patients } = require('../../models');
 
 // get all patients
@@ -15,7 +16,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     Patients.create({
         PatientName: req.body.PatientName,
-        PatientStatus: req.body.PatientStatus
+        PatientStatus: req.body.PatientStatus,
+        PatientType: req.body.PatientType,
+        prescription: req.body.prescription,
+        diagnosis: req.body.diagnosis,
+        reports: req.body.reports,
+        isVaccinated: req.body.isVaccinated
     })
     .then(dbPatientData => { 
         res.json(dbPatientData);
