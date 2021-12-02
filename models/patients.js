@@ -63,10 +63,22 @@ class Patients extends Model{};
             },
 
             isVaccinated: {
-                type: Sequelize.BOOLEAN, 
-                allowNull: false, 
-                defaultValue: false
-            }
+                type: Sequelize.ENUM ({ 
+                    values: ['Vaccinated', 'Not Vaccinated', 'Other'] 
+                }),
+                allowNull: false,
+                validate: {
+                    isIn: {
+                        args: [['Vaccinated', 'Not Vaccinated', 'Other']],
+                            msg: "Must be Vaccinated, Not Vaccinated, Other"
+                    }
+                }
+            },
+            // isVaccinated: {
+            //     type: Sequelize.BOOLEAN, 
+            //     allowNull: false, 
+            //     defaultValue: true
+            // }
         },
         {
             sequelize,
