@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
+  
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({ 
