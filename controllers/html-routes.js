@@ -19,7 +19,13 @@ router.get('/Medisearch', (req, res) => {
 });
 
 router.get('/Medisearch/Specialists', (req, res) => {
-  res.render('Specialists');
+  if (req.session.loggedIn) {
+    res.render('Specialists', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Specialists/add', (req, res) => {
