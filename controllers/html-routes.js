@@ -96,6 +96,26 @@ router.get('/Medisearch/Specialists/edit/:id', (req, res) => {
   });
 });
 
+router.delete('/Medisearch/Specialists/View', (req, res) => {
+  Specialists.destroy({
+      where: {
+          id: req.params.id
+      }
+  })
+  .then(dbSpecialistData => {
+      if (dbSpecialistData) {
+          res.render('SpecialistView');
+      }
+      else{
+        res.status(500).end();
+      }
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
+
 router.get('/Medisearch/PatientJourney', (req, res) => {
   res.render('Medisearch');
 });

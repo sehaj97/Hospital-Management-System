@@ -12,7 +12,7 @@
     {{#each specialists as |specialist|}}
     <tr>
       <th scope="row">{{specialist.id}}</th>
-      <td><a href="../controllers/html-routes.js">{{specialist.SpecialistName}}</a></td>
+      <td><a href="/Medisearch/Specialists/View/{{specialist.id}}">{{specialist.SpecialistName}}</a></td>
       <td>{{specialist.Speciality}}</td>
       <td><button type="button"  class="btn btn-xs btn-link delete-spe">Delete</button></td>
     </tr>

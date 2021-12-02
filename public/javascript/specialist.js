@@ -1,3 +1,5 @@
+const router = require("../../controllers");
+
 async function specialistFormHandler(event) {
     event.preventDefault();
     const SpecialistName = document.querySelector('#specialist-name').value.trim();
@@ -19,4 +21,6 @@ async function specialistFormHandler(event) {
         }
       }
 }
+
   document.querySelector('.specialist-form').addEventListener('submit', specialistFormHandler);
+
