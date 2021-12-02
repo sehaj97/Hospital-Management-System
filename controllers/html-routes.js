@@ -1,3 +1,5 @@
+const { Departments } = require('../models');
+
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
@@ -26,6 +28,52 @@ router.get('/Medisearch/Departments', (req, res) => {
 
 router.get('/Medisearch/Departments/add', (req, res) => {
   res.render('DepartmentsForm');
+});
+
+router.get('/Medisearch/Departments/View', (req, res) => {
+  console.log('==============');
+    Departments.findAll({
+        attributes: [
+            'id',
+            'DepartmentName'
+        ]
+    })
+        .then(dbDepartmentData => {
+            const departments = dbDepartmentData.map(department => department.get({ plain: true }));
+
+            res.render('DepartmentView', {departments});
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/Medisearch/Departments/View/:id', (req, res) => {
+  console.log('==============');
+    Departments.findOne({
+        where: {
+          id: req.params.id
+        },
+        attributes: [
+            'id',
+            'DepartmentName'
+        ]
+    })
+        .then(dbDepartmentData => {
+            if(!dbDepartmentData){
+              res.status(400).json({ message: 'No department found with this id' });
+              return;
+            }
+            const department = dbDepartmentData.get({ plain: true });
+            res.render('DepartmentViewOne', {
+              department
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/Medisearch/PatientJourney', (req, res) => {
