@@ -1,5 +1,3 @@
-//const router = require("../../controllers");
-
 async function specialistEditFormHandler(event) {
     event.preventDefault();
     const SpecialistName = document.querySelector('#specialist-name').value.trim();
