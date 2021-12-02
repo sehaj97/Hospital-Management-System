@@ -15,6 +15,11 @@ class Patients extends Model{};
                 type: DataTypes.STRING,
                 allowNull: false
             },
+
+            // PatientMedid: {
+            //     type: DataTypes.STRING,
+            //     allowNull: false
+            // }
         
             PatientStatus: {
                 type: Sequelize.ENUM ({ 
@@ -29,34 +34,51 @@ class Patients extends Model{};
                 }
             },
 
-            isIPD: { 
-                type: DataTypes.BOOLEAN, 
-                allowNull: false, 
-                defaultValue: false
-            },
-
-            isOPD: {
-                type: DataTypes.BOOLEAN,
+            PatientType: {
+                type: Sequelize.ENUM ({ 
+                    values: ['Inpatient', 'Outpatient'] 
+                }),
                 allowNull: false,
-                defaultValue: false
+                validate: {
+                    isIn: {
+                        args: [['Inpatient', 'Outpatient']],
+                            msg: "Must be Inpatient or Outpatient"
+                    }
+                }
             },
-            prescription:{
+    
+            prescription: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
+
             diagnosis:{
                 type: DataTypes.STRING,
                 allowNull: false
             },
+
             reports:{
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            isVaccinated:{
-                type: DataTypes.BOOLEAN, 
-                allowNull: false, 
-                defaultValue: false
-            }
+
+            isVaccinated: {
+                type: Sequelize.ENUM ({ 
+                    values: ['Vaccinated', 'Not Vaccinated', 'Other'] 
+                }),
+                allowNull: false,
+                validate: {
+                    isIn: {
+                        args: [['Vaccinated', 'Not Vaccinated', 'Other']],
+                            msg: "Must be Vaccinated, Not Vaccinated, Other"
+                    }
+                }
+            },
+            // isVaccinated: {
+            //     type: Sequelize.BOOLEAN, 
+            //     allowNull: false, 
+            //     defaultValue: true
+            // }
         },
         {
             sequelize,
