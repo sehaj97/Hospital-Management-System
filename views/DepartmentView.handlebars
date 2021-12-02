@@ -1,0 +1,17 @@
+<table class="table caption-top">
+  <caption>Departments</caption>
+  <thead>
+    <tr>
+      <th scope="col">Department_id</th>
+      <th scope="col">DepartmentName</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each departments as |department|}}
+    <tr>
+      <th scope="row">{{department.id}}</th>
+      <td>{{department.DepartmentName}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
