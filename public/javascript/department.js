@@ -1,7 +1,6 @@
 async function departmentFormHandler(event) {
     event.preventDefault();
     const DepartmentName = document.querySelector('#department-name').value.trim();
-
     if (DepartmentName) {
         const response = await fetch('/api/departments', {
           method: 'post',
