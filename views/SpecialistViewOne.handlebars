@@ -1,17 +1,13 @@
-<table class="table caption-top">
-  <caption>Specialists</caption>
-  <thead>
-    <tr>
-      <th scope="col">Specialist_id</th>
-      <th scope="col">SpecialistName</th>
-      <th scope="col">Speciality</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{specialist.id}}</th>
-      <td>{{specialist.SpecialistName}}</td>
-      <td>{{specialist.Speciality}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container mt-5 justify-content-center " style="max-width: 50%;">
+<div class="card text-center text-dark border-info">
+  <div class="card-header">
+    Specialist {{specialist.id}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{specialist.SpecialistName}}</h5>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{specialist.Speciality}}</h5>
+  </div>
+</div>
+</div>
