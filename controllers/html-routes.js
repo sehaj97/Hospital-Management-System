@@ -139,11 +139,23 @@ router.get('/Medisearch/Patients/add', (req, res) => {
 });
 
 router.get('/Medisearch/Departments', (req, res) => {
-  res.render('Departments');
+  if (req.session.loggedIn) {
+    res.render('Departments', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Departments/add', (req, res) => {
-  res.render('DepartmentsForm');
+  if (req.session.loggedIn) {
+    res.render('DepartmentsForm', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Departments/View', (req, res) => {
@@ -186,9 +198,12 @@ router.get('/Medisearch/Departments/View/:id', (req, res) => {
               return;
             }
             const department = dbDepartmentData.get({ plain: true });
-            res.render('DepartmentViewOne', {
-              department
-            });
+            if (req.session.loggedIn) {
+              res.render('DepartmentViewOne', {department, 
+                loggedIn: req.session.loggedIn});
+              return;
+            }
+            res.render('Login');
         })
         .catch(err => {
             console.log(err);
