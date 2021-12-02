@@ -70,6 +70,32 @@ router.get('/Medisearch/Specialists/View/:id', (req, res) => {
         });
 });
 
+router.get('/Medisearch/Specialists/edit/:id', (req, res) => {
+  Specialists.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'SpecialistName',
+      'Speciality'
+    ]
+  })
+  .then(dbSpecialistData => {
+    if(dbSpecialistData){
+    const specialist = dbSpecialistData.get({ plain: true });
+    res.render('SpecialistEdit', {
+      specialist
+    });
+  } else{
+    res.status(400).end();
+  }
+  })
+  .catch(err => {
+    res.status(500).json(err);
+  });
+});
+
 router.get('/Medisearch/PatientJourney', (req, res) => {
   res.render('Medisearch');
 });
