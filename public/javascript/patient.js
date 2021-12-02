@@ -24,7 +24,7 @@ async function patientFormHandler(event) {
           headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-          document.location.replace('/api/patients');
+          document.location.replace('/Medisearch/Patients/View');
         } else {
           alert(response.statusText);
         }

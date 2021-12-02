@@ -154,9 +154,14 @@ router.get('/Medisearch/Patients/View', (req, res) => {
   console.log('==============');
     Patients.findAll({
         attributes: [
-            'Patient_id',
+            'id',
             'PatientName',
-            'PatientStatus'
+            'PatientStatus',
+            'PatientType',
+            'prescription',
+            'diagnosis',
+            'reports',
+            'isVaccinated'
         ]
     })
         .then(dbPatientData => {
