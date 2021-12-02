@@ -1,4 +1,5 @@
-async function specialistFormHandler(event) {
+
+async function specialistAddFormHandler(event) {
     event.preventDefault();
     const SpecialistName = document.querySelector('#specialist-name').value.trim();
     const Speciality = document.querySelector('#speciality').value.trim();
@@ -13,10 +14,12 @@ async function specialistFormHandler(event) {
           headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-          document.location.replace('/api/specialists');
+          document.location.replace('/Medisearch/Specialists/View');
         } else {
           alert(response.statusText);
         }
       }
 }
-  document.querySelector('.specialist-form').addEventListener('submit', specialistFormHandler);
+
+  document.querySelector('.specialist-add-form').addEventListener('submit', specialistAddFormHandler);
+

@@ -1,7 +1,6 @@
 async function departmentFormHandler(event) {
     event.preventDefault();
     const DepartmentName = document.querySelector('#department-name').value.trim();
-
     if (DepartmentName) {
         const response = await fetch('/api/departments', {
           method: 'post',
@@ -11,7 +10,7 @@ async function departmentFormHandler(event) {
           headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-          document.location.replace('/api/departments');
+          document.location.replace('/medisearch/departments/view');
         } else {
           alert(response.statusText);
         }
