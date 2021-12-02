@@ -4,11 +4,19 @@ const router = require('express').Router();
 // const { Patients } = require('../models');
 
 router.get('/', (req, res) => {
-  res.render('Login');
+  res.render('Login', {
+    loggedIn: req.session.loggedIn
+  });
 });
 
 router.get('/Medisearch', (req, res) => {
-  res.render('Medisearch');
+  if (req.session.loggedIn) {
+    res.render('Medisearch', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Specialists', (req, res) => {
