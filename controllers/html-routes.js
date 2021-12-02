@@ -4,7 +4,7 @@ const router = require('express').Router();
 // const { Patients } = require('../models');
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  res.render('Login');
 });
 
 router.get('/Medisearch', (req, res) => {
