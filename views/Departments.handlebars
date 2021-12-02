@@ -1,19 +1,31 @@
-<div class="container" style="max-width: 100%;">
+<div class="d-flex flex-column justify-content-center align-items-center px-3 text-center text-white" style="padding-top: 100px;">
     <div class="row m-2 justify-content-center">
         <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center" style="width: 22rem;">
             <img src="https://cdn.pixabay.com/photo/2014/12/10/21/01/doctor-563428_960_720.jpg" class="card-img-top mt-2" alt="...">
             <div class="card-body">
-                <h5 class="card-title">To See Department Information From Database</h5>
+                <h5 class="card-title" style="color: black">To See Department Information From Database</h5>
                 <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                <a href="#" class="btn btn-primary " style="width: 50%;">Department list</a>
+                <a href="http://localhost:3001/Medisearch/Departments/View" class="btn btn-primary " style="width: 50%;">Department list</a>
+            </div>
+        </div>
+        <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center" style="width: 22rem;">
+            <img src="https://cdn.pixabay.com/photo/2014/12/10/21/01/doctor-563428_960_720.jpg" class="card-img-top mt-2" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="color: black">To see a single department</h5>
+                <form>
+                    <label for="department-id" style="color: black">Enter Department ID</label>
+                    <input type="text" style="margin: 5px 0 5px 0" id="department-id">
+                </form>
+                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                <a href="http://localhost:3001/Medisearch/Departments/View/:id" class="btn btn-primary " style="width: 50%;">Search a department</a>
             </div>
         </div>
         <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center" style="width: 22rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title"> Add New Department To Hospital Database </h5>
+                <h5 class="card-title" style="color: black"> Add New Department To Hospital Database </h5>
                 <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                <a href="#" class="btn btn-primary" style="width: 50%;">Add </a>
+                <a href="http://localhost:3001/Medisearch/Departments/add/" class="btn btn-primary" style="width: 50%;">Add </a>
             </div>
         </div>
     </div>
