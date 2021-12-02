@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const argon2 = require('argon2');
 
 // GET /api/users
 router.get('/', (req, res) => {
