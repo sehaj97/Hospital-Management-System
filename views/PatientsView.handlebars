@@ -3,9 +3,9 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">PatientName</th>
-      <th scope="col">PatientStatus</th>
-      <th scope="col">PatientType</th>
+      <th scope="col">Patient Name</th>
+      <th scope="col">Patient Status</th>
+      <th scope="col">Patient Type</th>
       <th scope="col">Prescription</th>
       <th scope="col">Diagnosis</th>
       <th scope="col">Reports</th>
@@ -17,7 +17,7 @@
     {{#each patients as |patient|}}
     <tr>
       <th scope="row">{{patient.id}}</th>
-      <td>{{patient.PatientName}}</td>
+      <td><a href="/Medisearch/Patients/View/{{patient.id}}">{{patient.PatientName}}</a></td>
       <td>{{patient.PatientStatus}}</td>
       <td>{{patient.PatientType}}</td>
       <td>{{patient.prescription}}</td>

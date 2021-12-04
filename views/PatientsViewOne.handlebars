@@ -1,27 +1,16 @@
-<table class="table caption-top">
-  <caption>Patients</caption>
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">PatientName</th>
-      <th scope="col">PatientStatus</th>
-      <th scope="col">PatientType</th>
-      <th scope="col">Prescription</th>
-      <th scope="col">Diagnosis</th>
-      <th scope="col">Reports</th>
-      <th scope="col">Vaccination Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{patient.id}}</th>
-      <td>{{patient.PatientName}}</td>
-      <td>{{patient.PatientStatus}}</td>
-      <td>{{patient.PatientType}}</td>
-      <td>{{patient.prescription}}</td>
-      <td>{{patient.diagnosis}}</td>
-      <td>{{patient.reports}}</td>
-      <td>{{patient.isVaccinated}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container mt-5 justify-content-center " style="max-width: 50%;">
+<div class="card text-dark border-info">
+  <div class="card-header text-center">
+    <h2>Patient {{patient.id}}</h2>
+  </div>
+  <div class="card-body text-center">
+    <h5 class="card-title mt-4">Patient Name: {{patient.PatientName}}</h5>
+    <h5 class="card-title mt-4">Patient Status: {{patient.PatientStatus}}</h5>
+    <h5 class="card-title mt-4">Patient Type:  {{patient.PatientType}}</h5>
+    <h5 class="card-title mt-4">Prescription Rx: {{patient.prescription}}</h5>
+    <h5 class="card-title mt-4">Diagnosis Dx: {{patient.diagnosis}}</h5>
+    <h5 class="card-title mt-4">Reports: {{patient.reports}}</h5>
+    <h5 class="card-title mt-4">Vaccination Status: {{patient.isVaccinated}}</h5>
+  </div>
+</div>
+</div>
