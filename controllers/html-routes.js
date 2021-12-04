@@ -179,8 +179,79 @@ router.get('/Medisearch/Patients/View', (req, res) => {
         });
 });
 
+router.get('/Medisearch/Patients/View/:id', (req, res) => {
+  console.log('==============');
+    Patients.findOne({
+        where: {
+          id: req.params.id
+        },
+        attributes: [
+          'id',
+          'PatientName',
+          'PatientStatus',
+          'PatientType',
+          'prescription',
+          'diagnosis',
+          'reports',
+          'isVaccinated'
+        ]
+    })
+        .then(dbPatientData => {
+            if(!dbPatientData){
+              res.status(400).json({ message: 'No Patient found with this id' });
+              return;
+            }
+            const patient = dbPatientData.get({ plain: true });
+            if (req.session.loggedIn) {
+              res.render('PatientsViewOne', {
+                patient,
+                loggedIn: req.session.loggedIn
+              });
+              return;
+            }
+            res.render('Login');
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
-
+router.get('/Medisearch/Patients/edit/:id', (req, res) => {
+  Patients.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'PatientName',
+      'PatientStatus',
+      'PatientType',
+      'prescription',
+      'diagnosis',
+      'reports',
+      'isVaccinated'
+    ]
+  })
+  .then(dbPatientData => {
+    if(dbPatientData){
+    const patient = dbPatientData.get({ plain: true });
+    if (req.session.loggedIn) {
+      res.render('PatientEdit', {
+        patient,
+        loggedIn: req.session.loggedIn
+      });
+      return;
+    }
+    res.render('Login');
+  } else{
+    res.status(400).end();
+  }
+  })
+  .catch(err => {
+    res.status(500).json(err);
+  });
+});
 
 router.get('/Medisearch/Departments', (req, res) => {
   if (req.session.loggedIn) {
