@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/sehaj97/Hospital-Management-System#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "animate.css": "^4.1.1",
     "argon2": "^0.28.3",
-    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -36,7 +36,6 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "argon2": "^0.28.3",
-    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
