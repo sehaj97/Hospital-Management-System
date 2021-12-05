@@ -1,3 +1,21 @@
+<div class="container mt-5 justify-content-center " style="max-width: 50%;">
+<div class="card text-dark border-info">
+  <div class="card-header text-center">
+    <h2>Update Patient {{patient.id}}</h2>
+  </div>
+  <div class="card-body text-center">
+    <h5 class="card-title mt-4">Current Name: {{patient.PatientName}}</h5>
+    <h5 class="card-title mt-4">Current Status: {{patient.PatientStatus}}</h5>
+    <h5 class="card-title mt-4">Current Type:  {{patient.PatientType}}</h5>
+    <h5 class="card-title mt-4">Current Prescription Rx: {{patient.prescription}}</h5>
+    <h5 class="card-title mt-4">Diagnosis Dx: {{patient.diagnosis}}</h5>
+    <h5 class="card-title mt-4">Reports: {{patient.reports}}</h5>
+    <h5 class="card-title mt-4">Vaccination Status: {{patient.isVaccinated}}</h5>
+  </div>
+</div>
+</div>
+
+<div class="container mt-5 col-lg-8 col-md-6 col text-center">
 <form class="patient-form">
   <div class="mb-3">
     <label for="patient-name" class="form-label">Patient Name</label>
@@ -48,5 +66,5 @@
     </div>
   <button type="submit" class="btn btn-primary">Add Changes</button>
 </form>
- 
+ </div>>
 <script src="/javascript/patientUpdate.js"></script>

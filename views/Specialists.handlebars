@@ -1,30 +1,28 @@
 <div class="container" style="max-width: 100%;">
     <div class="row m-2 justify-content-center">
-        
-        <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center" style="width: 22rem;">
-            <img src="https://cdn.pixabay.com/photo/2014/12/10/21/01/doctor-563428_960_720.jpg" class="card-img-top mt-2" alt="...">
+        <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center d-flex justify-content-center bg-dark align-items-center" style="width: 22rem;">
+            <img src="/images/search.png" class="card-img-top mt-4 mx-5" style="width: 65%;" alt="...">
             <div class="card-body">
-                <h5 class="card-title">To View or Delete Specialist's Infomation From Database</h5>
-                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                <a href="/Medisearch/Specialists/view" class="btn btn-primary " style="width: 50%;">Specialist list</a>
+                <h5 class="card-title my-3 text-white">View Specialists</h5>
+                <a href="/Medisearch/Specialists/view" class="btn btn-primary " style="/* width: 50%; */">Specialist Data</a>
             </div>
         </div>
-        <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center" style="width: 22rem;">
-            <img src="https://t4.ftcdn.net/jpg/04/24/30/93/360_F_424309320_UkOxg2z3sq7yXwGnWCO6xBXkRI4byhnI.jpg" class="card-img-top mt-2" alt="...">
+        <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center d-flex justify-content-center bg-dark align-items-center" style="width: 22rem;">
+            <img src="/images/add-file.png" class="card-img-top mt-2 w-75" alt="...">
             <div class="card-body">
-                <h5 class="card-title"> Add New Specialist To Hospital Database </h5>
-                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                <h5 class="card-title mb-3 text-white"> Add New Specialist </h5>
                 <a href="/Medisearch/Specialists/add" class="btn btn-primary" style="width: 50%;">Add </a>
             </div>
         </div>
-        <div class="card col-lg-10 col-md-4 col-sm-1 m-5 text-center" style="width: 22rem;">
-            <img src="https://images.cdn2.stockunlimited.net/preview1300/medical-background-set_1684464.jpg" class="card-img-top mt-2" alt="...">
-            <div class="card-body d-flex justify-content-center flex-column align-items-center">
-                <h5 class="card-title">Change Existing Specialist Information</h5>
-                <div class="input-group mb-3 ">
+
+        <div class="card col-lg-4 col-md-2 col-sm-1 m-5 text-center d-flex justify-content-center bg-dark align-items-center" style="width: 22rem;">
+            <img src="/images/writing.png" class="card-img-top mt-3" style="width: 65%;" alt="...">
+            <div class="card-body my-3 d-flex justify-content-center flex-column align-items-center">
+                <h5 class="card-title text-white"> Edit Existing Specialist</h5>
+                <div class="input-group d-flex justify-content-center flex-column align-items-center">
                     <form class="update-form ">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Enter Specialist ID" id="specialist-id" >
+                            <input type="text" class="form-control" placeholder="Please enter ID from list" id="specialist-id" >
                             <button class="btn btn-primary" type="submit" style="font-size: larger;">Edit</button>
                         </div>
                    </form>
