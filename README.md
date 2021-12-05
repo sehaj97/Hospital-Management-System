@@ -32,7 +32,6 @@ MEDiSEARCH is a dynamic hospital management tool that provides an efficient way 
 * [Tests](#tests)
 * [Contributors](#contributors)
 * [Screenshots](#screenshots)
-* [Questions](#questions)
 * [License](#license)
 
 ## Installation
