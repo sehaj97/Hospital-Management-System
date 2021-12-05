@@ -20,7 +20,15 @@ class Specialists extends Model{};
             Speciality:{
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            department_id: {
+                type: DataTypes.INTEGER,
+                references: {
+                    model: 'departments',
+                    key: 'id'
+                }
             }
+
         },
         {
             sequelize,

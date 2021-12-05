@@ -1,16 +1,17 @@
-<table class="table caption-top">
-  <caption>Departments</caption>
+<h1 class="text-center mt-2">Departments List</h1>
+
+<table class="table table-striped table-light caption-top text-center">
   <thead>
     <tr>
-      <th scope="col">Department_id</th>
-      <th scope="col">DepartmentName</th>
+      <th scope="col">Department ID</th>
+      <th scope="col">Department Name</th>
     </tr>
   </thead>
   <tbody>
     {{#each departments as |department|}}
     <tr>
       <th scope="row">{{department.id}}</th>
-      <td>{{department.DepartmentName}}</td>
+      <td><a href="/Medisearch/Departments/View/{{department.id}}">{{department.DepartmentName}}</a></td>
     </tr>
     {{/each}}
   </tbody>

@@ -1,11 +1,11 @@
-<table class="table caption-top">
-  <caption>Specialists</caption>
+<table class="table table-striped table-light caption-top mt-5 text-center">
+  <h1 class="text-center mt-2">Specialist Data</h1>
   <thead>
     <tr>
-      <th scope="col">Specialist_id</th>
-      <th scope="col">SpecialistName</th>
-      <th scope="col">Speciality</th>
-      <th scope="col">Remove Specialist</th>
+      <th scope="col" style="font-size: larger;">Specialist ID</th>
+      <th scope="col" style="font-size: larger;">Specialist Name</th>
+      <th scope="col" style="font-size: larger;">Speciality</th>
+      <th scope="col" style="font-size: larger;">Remove Specialist</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
       <th scope="row">{{specialist.id}}</th>
       <td><a href="/Medisearch/Specialists/View/{{specialist.id}}">{{specialist.SpecialistName}}</a></td>
       <td>{{specialist.Speciality}}</td>
-      <td><a id="delete-specialist-{{specialist.id}}" class="delete-specialist">Delete</a></td>
+      <td><a href="/" id="delete-specialist-{{specialist.id}}" class="delete-specialist">Delete</a></td>
     </tr>
     {{/each}}
   </tbody>

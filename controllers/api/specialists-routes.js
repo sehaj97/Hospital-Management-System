@@ -1,9 +1,17 @@
 const router = require('express').Router();
-const { Specialists } = require('../../models');
+const { Specialists, Departments } = require('../../models');
 
 // get all specialists
 router.get('/', (req, res) => {
-    Specialists.findAll()
+    Specialists.findAll({
+        attributes: ['id', 'SpecialistName', 'Speciality'],
+        include: [
+            {
+              model: Departments,
+              attributes: ['DepartmentName']
+            }
+          ]
+    })
         .then(dbSpecialistData => res.json(dbSpecialistData))
         .catch(err => {
             console.log(err);
@@ -36,6 +44,7 @@ router.post('/', (req, res) => {
     Specialists.create({
         SpecialistName: req.body.SpecialistName,
         Speciality: req.body.Speciality,
+        department_id: req.body.department_id
     })
     .then(dbSpecialistData => {
         res.json(dbSpecialistData);

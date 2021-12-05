@@ -1,17 +1,27 @@
+<div class="container mt-5 justify-content-center " style="max-width: 50%;">
+<div class="card text-dark border-info">
+  <div class="card-header text-center">
+    <h2>Update Patient {{patient.id}}</h2>
+  </div>
+  <div class="card-body text-center">
+    <h5 class="card-title mt-4">Current Name: {{patient.PatientName}}</h5>
+    <h5 class="card-title mt-4">Current Status: {{patient.PatientStatus}}</h5>
+    <h5 class="card-title mt-4">Current Type:  {{patient.PatientType}}</h5>
+    <h5 class="card-title mt-4">Current Prescription Rx: {{patient.prescription}}</h5>
+    <h5 class="card-title mt-4">Diagnosis Dx: {{patient.diagnosis}}</h5>
+    <h5 class="card-title mt-4">Reports: {{patient.reports}}</h5>
+    <h5 class="card-title mt-4">Vaccination Status: {{patient.isVaccinated}}</h5>
+  </div>
+</div>
+</div>
+
 <div class="container mt-5 col-lg-8 col-md-6 col text-center">
-  <h1>Add New Patient</h1>
 <form class="patient-form">
-    <div class="mb-3">
-        <label for="patient-name" class="form-label">Patient Name</label>
-        <input type="text" class="form-control" id="patient-name">
-    </div>
-
-  {{!-- <div class="mb-3">
-    <label for="patient-medid" class="form-label">Patient MediD</label>
-    <input type="text" class="form-control" id="patient-medid">
-  </div> --}}
-
-    <div class="dropdown mb-3">
+  <div class="mb-3">
+    <label for="patient-name" class="form-label">Patient Name</label>
+    <input type="text" class="form-control" id="patient-name">
+  </div>
+  <div class="dropdown mb-3">
         <label for="patient-status" class="form-label">Patient Status</label>
         <select id="patient-status" class="form-select">
             <option selected disabled>Please choose one of the below:</option>
@@ -19,7 +29,6 @@
             <option>Discharged</option>
         </select>
     </div>
-
     <div class="dropdown mb-3">
         <label for="patient-type" class="form-label">Patient Type</label>
         <select id="patient-type" class="form-select">
@@ -28,25 +37,10 @@
             <option>Outpatient</option>
         </select>
     </div>
- 
-    {{!-- <div class="form-check mb-3">
-        <label for="patient-type" class="form-label">Is this patient considered: Inpatient or Outpatient?</label>
-        <div class="form-check">
-            <input type="radio" class="form-check-input" id="isIPD" name="optradio" value="isIPD" checked>
-            <label class="form-check-label" for="isIPD">Inpatient (IPD)</label>
-        </div>
-        <div class="form-check">
-            <input type="radio" class="form-check-input" id="isOPD" name="optradio" value="isOPD" checked>
-            <label class="form-check-label" for="isOPD">Outpatient (OPD)</label> 
-        </div>
-    </div> --}}
-
-
     <div class="mb-3">
         <label for="prescription" class="form-label">Prescription - Rx</label>
         <input type="text" class="form-control" id="prescription">
     </div>
-    
     <div class="mb-3">
         <label for="diagnosis" class="form-label">Diagnosis - Dx</label>
         <div class="form-floating mb-3">
@@ -54,7 +48,6 @@
             <textarea class="form-control" placeholder="Add a comment here" id="diagnosis" style="height: 100px"></textarea>
        </div>
     </div>
-
     <div class="mb-3">
         <label for="reports" class="form-label">Reports</label>
         <div class="form-floating mb-3">
@@ -62,7 +55,6 @@
             <textarea class="form-control" placeholder="Add a comment here" id="reports" style="height: 100px"></textarea>
        </div>
     </div>
-
     <div class="dropdown mb-3">
         <label for="isVaccinated" class="form-label">Covid-19 Vaccination Status:</label>
         <select id="isVaccinated" class="form-select">
@@ -72,16 +64,7 @@
             <option>Other</option>
         </select>
     </div>
-
-    {{!-- <div class="form-check mb-3">
-        <label for="isVaccinated" class="form-label">Covid-19 Vaccination Status:</label>
-        <div class="form-check">
-            <input type="radio" class="form-check-input" id="isVaccinated" name="optradio" value="isVaccinated">
-            <label class="form-check-label" for="isVaccinated">Vaccinated</label>
-        </div>
-    </div> --}}
-
-  <button type="submit" class="btn btn-primary">Add New Patient</button>
+  <button type="submit" class="btn btn-primary">Add Changes</button>
 </form>
-</div>
-<script src="/javascript/patient.js"></script>
+ </div>>
+<script src="/javascript/patientUpdate.js"></script>

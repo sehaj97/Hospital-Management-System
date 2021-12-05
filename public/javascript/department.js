@@ -10,7 +10,7 @@ async function departmentFormHandler(event) {
           headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-          document.location.replace('/api/departments');
+          document.location.replace('/medisearch/departments/view');
         } else {
           alert(response.statusText);
         }

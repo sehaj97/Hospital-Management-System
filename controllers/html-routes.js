@@ -29,7 +29,13 @@ router.get('/Medisearch/Specialists', (req, res) => {
 });
 
 router.get('/Medisearch/Specialists/add', (req, res) => {
-  res.render('SpecialistForm');
+  if (req.session.loggedIn) {
+    res.render('SpecialistForm', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Specialists/View', (req, res) => {
@@ -43,8 +49,14 @@ router.get('/Medisearch/Specialists/View', (req, res) => {
     })
         .then(dbSpecialistData => {
             const specialists = dbSpecialistData.map(specialist => specialist.get({ plain: true }));
-
-            res.render('SpecialistView', {specialists});
+            if (req.session.loggedIn) {
+              res.render('SpecialistView', {
+                specialists,
+                loggedIn: req.session.loggedIn
+              });
+              return;
+            }
+            res.render('Login');
         })
         .catch(err => {
             console.log(err);
@@ -70,9 +82,14 @@ router.get('/Medisearch/Specialists/View/:id', (req, res) => {
               return;
             }
             const specialist = dbSpecialistData.get({ plain: true });
-            res.render('SpecialistViewOne', {
-              specialist
-            });
+            if (req.session.loggedIn) {
+              res.render('SpecialistViewOne', {
+                specialist,
+                loggedIn: req.session.loggedIn
+              });
+              return;
+            }
+            res.render('Login');
         })
         .catch(err => {
             console.log(err);
@@ -94,9 +111,14 @@ router.get('/Medisearch/Specialists/edit/:id', (req, res) => {
   .then(dbSpecialistData => {
     if(dbSpecialistData){
     const specialist = dbSpecialistData.get({ plain: true });
-    res.render('SpecialistEdit', {
-      specialist
-    });
+    if (req.session.loggedIn) {
+      res.render('SpecialistEdit', {
+        specialist,
+        loggedIn: req.session.loggedIn
+      });
+      return;
+    }
+    res.render('Login');
   } else{
     res.status(400).end();
   }
@@ -106,44 +128,149 @@ router.get('/Medisearch/Specialists/edit/:id', (req, res) => {
   });
 });
 
-//router.delete('/Medisearch/Specialists/View', (req, res) => {
-  //Specialists.destroy({
-      //where: {
-         // id: req.params.id
-      //}
-  //})
-  //.then(dbSpecialistData => {
-     // if (dbSpecialistData) {
-      //    res.render('SpecialistView');
-     // }
-     // else{
-      //  res.status(500).end();
-     // }
-  //})
-  //.catch(err => {
-   //   console.log(err);
-   //   res.status(500).json(err);
- //// });
-//});
-
-router.get('/Medisearch/PatientJourney', (req, res) => {
-  res.render('Medisearch');
-});
-
 router.get('/Medisearch/Patients', (req, res) => {
-  res.render('Patients');
+  if (req.session.loggedIn) {
+    res.render('Patients', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Patients/add', (req, res) => {
-  res.render('PatientForm');
+  if (req.session.loggedIn) {
+    res.render('PatientForm', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
+});
+
+router.get('/Medisearch/Patients/View', (req, res) => {
+  console.log('==============');
+    Patients.findAll({
+        attributes: [
+            'id',
+            'PatientName',
+            'PatientStatus',
+            'PatientType',
+            'prescription',
+            'diagnosis',
+            'reports',
+            'isVaccinated'
+        ]
+    })
+        .then(dbPatientData => {
+            const patients = dbPatientData.map(patient => patient.get({ plain: true }));
+            if (req.session.loggedIn) {
+              res.render('PatientsView', {
+                patients,
+                loggedIn: req.session.loggedIn
+              });
+              return;
+            }
+            res.render('Login');
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/Medisearch/Patients/View/:id', (req, res) => {
+  console.log('==============');
+    Patients.findOne({
+        where: {
+          id: req.params.id
+        },
+        attributes: [
+          'id',
+          'PatientName',
+          'PatientStatus',
+          'PatientType',
+          'prescription',
+          'diagnosis',
+          'reports',
+          'isVaccinated'
+        ]
+    })
+        .then(dbPatientData => {
+            if(!dbPatientData){
+              res.status(400).json({ message: 'No Patient found with this id' });
+              return;
+            }
+            const patient = dbPatientData.get({ plain: true });
+            if (req.session.loggedIn) {
+              res.render('PatientsViewOne', {
+                patient,
+                loggedIn: req.session.loggedIn
+              });
+              return;
+            }
+            res.render('Login');
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/Medisearch/Patients/edit/:id', (req, res) => {
+  Patients.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'PatientName',
+      'PatientStatus',
+      'PatientType',
+      'prescription',
+      'diagnosis',
+      'reports',
+      'isVaccinated'
+    ]
+  })
+  .then(dbPatientData => {
+    if(dbPatientData){
+    const patient = dbPatientData.get({ plain: true });
+    if (req.session.loggedIn) {
+      res.render('PatientEdit', {
+        patient,
+        loggedIn: req.session.loggedIn
+      });
+      return;
+    }
+    res.render('Login');
+  } else{
+    res.status(400).end();
+  }
+  })
+  .catch(err => {
+    res.status(500).json(err);
+  });
 });
 
 router.get('/Medisearch/Departments', (req, res) => {
-  res.render('Departments');
+  if (req.session.loggedIn) {
+    res.render('Departments', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Departments/add', (req, res) => {
-  res.render('DepartmentsForm');
+  if (req.session.loggedIn) {
+    res.render('DepartmentsForm', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+  res.render('Login');
 });
 
 router.get('/Medisearch/Departments/View', (req, res) => {
@@ -186,45 +313,17 @@ router.get('/Medisearch/Departments/View/:id', (req, res) => {
               return;
             }
             const department = dbDepartmentData.get({ plain: true });
-            res.render('DepartmentViewOne', {
-              department
-            });
+            if (req.session.loggedIn) {
+              res.render('DepartmentViewOne', {department, 
+                loggedIn: req.session.loggedIn});
+              return;
+            }
+            res.render('Login');
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
-
-// router.get('/Medisearch/Patients/add', (req, res) => {
-//   Patients.create({
-//     PatientName: req.body.PatientName,
-//     PatientStatus: req.body.PatientStatus,
-//     PatientType: req.body.PatientType,
-//     prescription: req.body.prescription,
-//     diagnosis: req.body.diagnosis,
-//     reports: req.body.reports,
-//     isVaccinated: req.body.isVaccinated
-// })
-// .then(dbPatientData => { 
-//     // res.json(dbPatientData);
-//     if (!dbPatientData) {
-//       res.status(400).json({message: 'No patient found with this id'});
-//       return;
-//     };
-//     const patient = dbPatientData.get({plain: true});
-//     res.render('PatientForm',{
-//       patient
-//     });
-// })
-// .catch(err => {
-//     console.log(err);
-//     res.status(500).json(err);
-//   });
-// });
-
-// router.get('/Medisearch/PatientJourney', (req, res) => {
-//   res.render('Medisearch');
-// });
 
 module.exports = router;
