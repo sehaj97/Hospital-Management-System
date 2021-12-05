@@ -1,7 +1,7 @@
 async function updateFormHandler(event) {
     event.preventDefault();
     const specialistId = document.querySelector('#specialist-id').value.trim();
-
+    
     window.location.replace('/Medisearch/Specialists/edit/'+ specialistId);
 }
  
@@ -10,7 +10,6 @@ async function updateFormHandler(event) {
     event.preventDefault();
     const SpecialistName = document.querySelector('#specialist-name').value.trim();
     const Speciality = document.querySelector('#speciality').value.trim();
-    //const id = document.getElementById('input').value;
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];

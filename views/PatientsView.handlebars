@@ -1,15 +1,11 @@
-<table class="table caption-top">
-  <caption>Patients</caption>
+<div class="container">
+
+<table class="table table-striped table-light text-center">
+  <h1 class="text-center mt-2">Patients Data</h1>
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">Patient Name</th>
-      <th scope="col">Patient Status</th>
-      <th scope="col">Patient Type</th>
-      <th scope="col">Prescription</th>
-      <th scope="col">Diagnosis</th>
-      <th scope="col">Reports</th>
-      <th scope="col">Vaccination Status</th>
+      <th scope="col">Patient Id</th>
+      <th scope="col">Patient Info</th>
 
     </tr>
   </thead>
@@ -17,14 +13,19 @@
     {{#each patients as |patient|}}
     <tr>
       <th scope="row">{{patient.id}}</th>
-      <td><a href="/Medisearch/Patients/View/{{patient.id}}">{{patient.PatientName}}</a></td>
-      <td>{{patient.PatientStatus}}</td>
-      <td>{{patient.PatientType}}</td>
-      <td>{{patient.prescription}}</td>
-      <td>{{patient.diagnosis}}</td>
-      <td>{{patient.reports}}</td>
-      <td>{{patient.isVaccinated}}</td>
+      <td class="d-flex align-items-center justify-content-center"> 
+        <a href="/Medisearch/Patients/View/{{patient.id}}" class="col-sm-12 col-lg-4 d-flex justify-content-center text-decoration-none">
+        <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{patient.PatientName}}</h5>
+              <p class="card-text">Click To View Details</p>
+            </div>
+        </div>
+        </a>
+    </td>
     </tr>
     {{/each}}
   </tbody>
 </table>
+
+</div>
