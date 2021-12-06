@@ -5,7 +5,11 @@
 ## Description
 MEDiSEARCH is a dynamic hospital management tool that provides an efficient way to manage organization-related and medical-related information within ONE app. This application is for internal use only.
 
-### URLs
+* see test section in this file for login details
+
+### URL
+
+Deployed Application on Heroku: [https://med-i-search.herokuapp.com/](https://med-i-search.herokuapp.com/)
 
 ### Technologies used
 * New library used: Argon2
@@ -42,6 +46,8 @@ MEDiSEARCH is a dynamic hospital management tool that provides an efficient way 
 4. Run 'npm start'.
 
 ## Usage
+
+* Go to the deployed link in description
 * Sign up using your credentials.
 * Login using your credentials. 
 * From the homepage, choose from one of the 3 options: Departments, Specialists and Patients. 
@@ -50,10 +56,190 @@ MEDiSEARCH is a dynamic hospital management tool that provides an efficient way 
 * Within Patients, users can view a list of patients, add new patients and edit existings ones.
 
 ## Tests
+To test the app:
+
+If you do not wish to sign up please use the following credentials :
+
+username: admin@admin.com
+password: admin123
+
+
+To test apis: 
+
 1. Install Insomnia Core or Postman (testing software)
 2. Using the above installed software test the following URLs to test the APIs
 
 ### APIs URL
+
+#### Users Model
+
+1. GET Request for all users
+
+[https://med-i-search.herokuapp.com/api/users](https://med-i-search.herokuapp.com/api/users)
+
+2. POST Request to add one user
+
+[https://med-i-search.herokuapp.com/api/users](https://med-i-search.herokuapp.com/api/users)
+
+```
+Use the api with following json body as example:
+
+{
+  "username": "admin2",
+  "email": "Admin2@admin.com",
+  "password": "12345678"
+}
+```
+
+3. GET Request for one User
+
+https://med-i-search.herokuapp.com/api/users/{id of existing user}
+
+4. DELETE Request for one User
+
+https://med-i-search.herokuapp.com/api/users/{id of existing user}
+
+
+```
+Use the following as example DELETE AND GET FOR ONE USER:
+
+https://med-i-search.herokuapp.com/api/users/1
+```
+
+
+#### Departments Model
+
+
+1. GET Request for all Departments
+
+[https://med-i-search.herokuapp.com/api/departments](https://med-i-search.herokuapp.com/api/departments)
+
+
+2. GET Request for one Departments
+
+https://med-i-search.herokuapp.com/api/departments/{id of existing department}
+
+
+```
+Use the following as example :
+
+https://med-i-search.herokuapp.com/api/departments/1
+```
+
+3. POST Request for one Department
+
+[https://med-i-search.herokuapp.com/api/departments](https://med-i-search.herokuapp.com/api/departments)
+
+```
+Add the follwing json body to test post request
+
+{
+  "DepartmentName" : "Oncology"
+}
+```
+
+
+#### Specialists Model
+
+1. GET Request for all Specialist
+
+[https://med-i-search.herokuapp.com/api/specialists](https://med-i-search.herokuapp.com/api/specialists)
+
+2. GET Request for one Specialist
+
+https://med-i-search.herokuapp.com/api/specialists/{id of existing specialist}
+
+3. DELETE Request for one Specialist
+
+https://med-i-search.herokuapp.com/api/specialists/{id of existing specialist}
+
+4. PUT Request for one Specialist
+
+https://med-i-search.herokuapp.com/api/specialists/{id of existing specialist}
+
+
+```
+Use the following as example for GET, PUT & DELETE :
+
+https://med-i-search.herokuapp.com/api/specialists/1
+
+Add the following json body as example for only PUT request:
+
+{
+  “SpecialistName”: “Carla G”,
+  “Speciality”: “Oncologist”
+}
+```
+
+
+5. POST Request for one Specialist
+
+[https://med-i-search.herokuapp.com/api/specialists](https://med-i-search.herokuapp.com/api/specialists)
+
+```
+Add the following json body as example for post request:
+
+{
+  “SpecialistName”: “Carla G”,
+  “Speciality”: “Oncologist”
+}
+
+```
+
+#### Patients Model
+
+1. GET Request for all patients
+
+[https://med-i-search.herokuapp.com/api/patients](https://med-i-search.herokuapp.com/api/patients)
+
+
+2. GET Request for one Patient
+
+https://med-i-search.herokuapp.com/api/patients/{id of existing patient}
+
+3. PUT Request for one Patient
+
+https://med-i-search.herokuapp.com/api/patients/{id of existing patient}
+
+
+```
+Use the following as example for GET & PUT :
+
+https://med-i-search.herokuapp.com/api/patients/1
+
+Add the following json body as example for only PUT request:
+
+{
+	"PatientName": "barbara",
+	"PatientStatus": "Active",
+	"PatientType": "Inpatient",
+	"prescription": "T2",
+	"diagnosis": "OA, asthama",
+	"reports": "in progress",
+	"isVaccinated": "true"
+}
+```
+
+
+4. POST Request for one Patient
+
+[https://med-i-search.herokuapp.com/api/patients](https://med-i-search.herokuapp.com/api/patients)
+
+```
+Add the following json body as example for post request
+
+{
+	"PatientName": "barbara",
+	"PatientStatus": "Active",
+	"PatientType": "Inpatient",
+	"prescription": "T2",
+	"diagnosis": "OA, asthama",
+	"reports": "in progress",
+	"isVaccinated": "true"
+}
+
+```
+
 
 ### Local testing
 1. Install Insomnia Core or Postman (testing software)
@@ -62,7 +248,6 @@ MEDiSEARCH is a dynamic hospital management tool that provides an efficient way 
 ## Screenshots
 ![medisearch-adminpage](https://user-images.githubusercontent.com/88293666/144766460-4f2270cf-22f3-4082-992e-11dba8e18cb1.jpg)
 ![medisearch-homepage](https://user-images.githubusercontent.com/88293666/144766463-e604aa7b-aa0f-4541-b2a3-a1ad21c98569.jpg)
-![medisearch-department](https://user-images.githubusercontent.com/88293666/144766467-53b655a2-a6d1-4ae8-bea8-84f31ae38c32.jpg)
 
 ## Contributors
 ### Please feel free to contact us with any questions
