@@ -251,18 +251,18 @@ Add the following json body as example for post request
 
 ## Contributors
 ### Please feel free to contact us with any questions
+* Ravneet Panglia |
+  Contact email: ravneetpanglia@gmail.com |
+  GitHub: [rpanglia](https://github.com/rpanglia)
+* Purvi Mecwan | 
+  Contact email: princy.mecwan94@gmail.com |
+  GitHub: [PurviMec](https://github.com/PurviMec)
 * Scott Bradley |
   Contact email: scottabradley91@gmail.com |
   GitHub: [ScalexanderB](https://github.com/ScalexanderB)
 * Sehajpreet Singh |
   Contact email: sehajmagan@gmail.com |
-  GitHub: [ScalexanderB](https://github.com/sehaj97)
-* Ravneet Panglia |
-  Contact email: ravneetpanglia@gmail.com |
-  GitHub: [ScalexanderB](https://github.com/rpanglia)
-* Purvi Mecwan | 
-  Contact email: princy.mecwan94@gmail.com |
-  GitHub: [ScalexanderB](https://github.com/PurviMec)      
+  GitHub: [Sehaj97](https://github.com/sehaj97)
 
 ## License
 This project is unlicensed.
