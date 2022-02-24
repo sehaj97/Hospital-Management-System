@@ -6,6 +6,7 @@
       <th scope="col" style="font-size: larger;">Specialist Name</th>
       <th scope="col" style="font-size: larger;">Speciality</th>
       <th scope="col" style="font-size: larger;">Remove Specialist</th>
+      <th scope="col" style="font-size: larger;">Edit Specialist</th>
     </tr>
   </thead>
   <tbody>
@@ -15,9 +16,11 @@
       <td><a href="/Medisearch/Specialists/View/{{specialist.id}}">{{specialist.SpecialistName}}</a></td>
       <td>{{specialist.Speciality}}</td>
       <td><a href="/" id="delete-specialist-{{specialist.id}}" class="delete-specialist">Delete</a></td>
+      <td><a href="/" id="edit-specialist-{{specialist.id}}" class="edit-specialist">Edit</a></td>
     </tr>
     {{/each}}
   </tbody>
 </table>
 
 <script src="/javascript/delete-specialist.js"></script>
+<script src="/javascript/edit-specialist.js"></script>

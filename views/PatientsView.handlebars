@@ -6,6 +6,7 @@
     <tr>
       <th scope="col">Patient Id</th>
       <th scope="col">Patient Info</th>
+      <th scope="col">Edit Details</th>
 
     </tr>
   </thead>
@@ -13,12 +14,19 @@
     {{#each patients as |patient|}}
     <tr>
       <th scope="row">{{patient.id}}</th>
-      <td class="d-flex align-items-center justify-content-center"> 
-        <a href="/Medisearch/Patients/View/{{patient.id}}" class="col-sm-12 col-lg-4 d-flex justify-content-center text-decoration-none">
+      <td class=""> 
+        <a href="/Medisearch/Patients/View/{{patient.id}}" class="col d-flex justify-content-center text-decoration-none">
         <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
             <div class="card-body">
               <h5 class="card-title">{{patient.PatientName}}</h5>
               <p class="card-text">Click To View Details</p>
+            </div>
+        </div>
+        </a>
+    </td>
+    <td class=""> 
+        <a href="/Medisearch/Patients/edit/{{patient.id}}" class="col d-flex justify-content-center text-decoration-none">
+        <div class="btn text-white bg-dark mb-3">Edit
             </div>
         </div>
         </a>
