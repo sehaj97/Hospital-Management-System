@@ -18,7 +18,7 @@ async function signupFormHandler(event) {
       // check the response status
       if (response.ok) {
         
-        document.location.replace('/welcome');
+        document.location.replace('/');
         alert("Login with your credentials");
       } else {
         alert(response.statusText);

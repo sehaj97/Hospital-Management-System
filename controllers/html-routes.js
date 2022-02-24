@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Specialists, Departments, Patients } = require('../models');
 
-router.get('/welcome', (req, res) => {
+router.get('/', (req, res) => {
   res.render('Login', {
     loggedIn: req.session.loggedIn
   });
