@@ -5,7 +5,9 @@
 ## Description
 MEDiSEARCH is a dynamic hospital management tool that provides an efficient way to manage organization-related and medical-related information within ONE app. This application is for internal use only.
 
-* see test section in this file for login details
+Please use the following credentials to test the application:
+username = testuser
+password = test1234
 
 ### URL
 
@@ -41,9 +43,8 @@ Deployed Application on Heroku: [https://med-i-search.herokuapp.com/](https://me
 ## Installation
 ### If you want to run locally
 1. Clone repository to your local machine.
-2. Run 'npm install' in your command line.  
-3. Ensure you have the node_modules folder.
-4. Run 'npm start'.
+2. Run 'npm install' in your command line.
+3. Run 'npm start'.
 
 ## Usage
 
@@ -53,18 +54,10 @@ Deployed Application on Heroku: [https://med-i-search.herokuapp.com/](https://me
 * From the homepage, choose from one of the 3 options: Departments, Specialists and Patients. 
 * When you click on Departments, you can view a list of existing departments and have the option to add new departments. 
 * Within the Specialists, users can view a list of specialists, add new specialists and edit existing ones. 
-* Within Patients, users can view a list of patients, add new patients and edit existings ones.
+* Within Patients, users can view a list of patients, add new patients and edit existing ones.
 
 ## Tests
-To test the app:
-
-If you do not wish to sign up please use the following credentials :
-
-username: admin@admin.com
-password: admin123
-
-
-To test apis: 
+api testing: 
 
 1. Install Insomnia Core or Postman (testing software)
 2. Using the above installed software test the following URLs to test the APIs
