@@ -4,26 +4,16 @@
     <h2>Update Patient {{patient.id}}</h2>
   </div>
   <div class="card-body text-center">
-    <h5 class="card-title mt-4">Current Name: {{patient.PatientName}}</h5>
-    <h5 class="card-title mt-4">Current Status: {{patient.PatientStatus}}</h5>
-    <h5 class="card-title mt-4">Current Type:  {{patient.PatientType}}</h5>
-    <h5 class="card-title mt-4">Current Prescription Rx: {{patient.prescription}}</h5>
-    <h5 class="card-title mt-4">Diagnosis Dx: {{patient.diagnosis}}</h5>
-    <h5 class="card-title mt-4">Reports: {{patient.reports}}</h5>
-    <h5 class="card-title mt-4">Vaccination Status: {{patient.isVaccinated}}</h5>
-  </div>
-</div>
-</div>
-
-<div class="container mt-5 col-lg-8 col-md-6 col text-center">
-<form class="patient-form">
+    <form class="patient-form">
   <div class="mb-3">
     <label for="patient-name" class="form-label">Patient Name</label>
-    <input type="text" class="form-control" id="patient-name">
+    <input type="text" class="form-control" id="patient-name" value={{patient.PatientName}}>
   </div>
   <div class="dropdown mb-3">
         <label for="patient-status" class="form-label">Patient Status</label>
-        <select id="patient-status" class="form-select">
+        
+      <h5 class="card-title mt-4">Current Status: value={{patient.PatientStatus}}</h5>
+        <select id="patient-status" class="form-select" >
             <option selected disabled>Please choose one of the below:</option>
             <option>Active</option> 
             <option>Discharged</option>
@@ -31,6 +21,7 @@
     </div>
     <div class="dropdown mb-3">
         <label for="patient-type" class="form-label">Patient Type</label>
+    <h5 class="card-title mt-4">Current Type:{{patient.PatientType}}  </h5>
         <select id="patient-type" class="form-select">
             <option selected disabled>Please choose one of the below:</option>
             <option>Inpatient</option> 
@@ -39,25 +30,26 @@
     </div>
     <div class="mb-3">
         <label for="prescription" class="form-label">Prescription - Rx</label>
-        <input type="text" class="form-control" id="prescription">
+        <input type="text" class="form-control" id="prescription" value={{patient.prescription}}>
     </div>
     <div class="mb-3">
         <label for="diagnosis" class="form-label">Diagnosis - Dx</label>
         <div class="form-floating mb-3">
             <label for="diagnosis"></label>
-            <textarea class="form-control" placeholder="Add a comment here" id="diagnosis" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Add a comment here" id="diagnosis" style="height: 100px"  >{{patient.diagnosis}}</textarea>
        </div>
     </div>
     <div class="mb-3">
         <label for="reports" class="form-label">Reports</label>
         <div class="form-floating mb-3">
             <label for="reports"></label>
-            <textarea class="form-control" placeholder="Add a comment here" id="reports" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Add a comment here" id="reports" style="height: 100px" >{{patient.reports}}</textarea>
        </div>
     </div>
     <div class="dropdown mb-3">
         <label for="isVaccinated" class="form-label">Covid-19 Vaccination Status:</label>
-        <select id="isVaccinated" class="form-select">
+    <h5 class="card-title mt-4">Vaccination Status: {{patient.isVaccinated}}</h5>
+        <select id="isVaccinated" class="form-select" >
             <option selected disabled>Please choose one of the below:</option>
             <option>Vaccinated</option> 
             <option>Not Vaccinated</option>
@@ -66,5 +58,9 @@
     </div>
   <button type="submit" class="btn btn-primary">Add Changes</button>
 </form>
- </div>>
+    
+  </div>
+</div>
+</div>
+
 <script src="/javascript/patientUpdate.js"></script>

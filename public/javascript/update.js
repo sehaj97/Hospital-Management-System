@@ -29,6 +29,9 @@ async function updateFormHandler(event) {
           alert(response.statusText);
         }
       }
+      else{
+        alert("please check: all fields should have values")
+      }
 }
 
 if(document.querySelector('.specialist-form')){

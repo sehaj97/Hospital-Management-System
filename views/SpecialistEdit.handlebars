@@ -5,25 +5,21 @@
   <div class="card-header m-3 fs-1" >
     Update Specialist {{specialist.id}}
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Current Name: {{specialist.SpecialistName}}</h5>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Current Speciality: {{specialist.Speciality}}</h5>
-  </div>
-</div>
-</div>
-<form class="specialist-form">
+  <form class="specialist-form">
   <div class="mb-3 ">
     <label for="specialist-name" class="form-label font-weight-bold">Specialist Name</label>
-    <input type="text" class="form-control" id="specialist-name">
+    <input type="text" class="form-control text-center" id="specialist-name" value={{specialist.SpecialistName}}>
   </div>
   <div class="mb-3 ">
     <label for="speciality" class="form-label font-weight-bold">Speciality</label>
-    <input type="text" class="form-control" id="speciality">
+    <input type="text" class="form-control text-center" id="speciality" value={{specialist.Speciality}}>
   </div>
   <button type="submit" class="btn btn-primary">Add Changes</button>
 </form>
+<br/>
+</div>
+</div>
+
 </div>
 
 <script src="/javascript/update.js"></script>

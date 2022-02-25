@@ -39,6 +39,8 @@ async function updateFormHandler(event) {
         } else {
           alert(response.statusText);
         }
+      } else {
+        alert("please check: all fields should have values")
       }
 }
 
