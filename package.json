@@ -1,53 +1,34 @@
 {
-  "name": "hospital-management-system",
+  "name": "medisearch",
   "version": "1.0.0",
-  "description": "dependencies for the developers",
+  "description": "medical management app",
   "main": "server.js",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "argon2": "^0.28.4",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "node-gyp": "^8.4.1",
+    "path": "^0.12.7",
+    "sequelize": "^6.17.0"
+  },
   "scripts": {
     "test": "jest",
-    "start": "NODE_ENV=production node server"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sehaj97/Hospital-Management-System.git"
+    "url": "git+https://github.com/sehaj97/Medisearch.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sehaj97/Hospital-Management-System/issues"
+    "url": "https://github.com/sehaj97/Medisearch/issues"
   },
-  "homepage": "https://github.com/sehaj97/Hospital-Management-System#readme",
-  "devDependencies": {
-    "animate.css": "^4.1.1",
-    "argon2": "^0.28.3",
-    "connect-session-sequelize": "^7.1.2",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.3",
-    "express-handlebars": "^6.0.2",
-    "express-session": "^1.17.2",
-    "handlebars": "^4.7.7",
-    "mysql2": "^2.3.3",
-    "node-gyp": "^8.4.1",
-    "nodemon": "^2.0.15",
-    "path": "^0.12.7",
-    "sequelize": "^6.11.0"
-  },
-  "dependencies": {
-    "animate.css": "^4.1.1",
-    "argon2": "^0.28.3",
-    "express": "^4.17.3",
-    "body-parser": "*",
-    "connect-session-sequelize": "^7.1.2",
-    "dotenv": "^10.0.0",
-    "express-handlebars": "^6.0.2",
-    "express-session": "^1.17.2",
-    "handlebars": "^4.7.7",
-    "jest": "^27.3.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
-    "node-gyp": "^8.4.1",
-    "nodemon": "^2.0.15",
-    "path": "^0.12.7",
-    "sequelize": "^6.11.0"
-  }
+  "homepage": "https://github.com/sehaj97/Medisearch#readme"
 }
