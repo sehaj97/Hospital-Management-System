@@ -9,9 +9,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-  res.render('Signup', {
-    loggedIn: req.session.loggedIn
-  });
+  res.render('Signup');
 });
 
 router.get('/Medisearch', (req, res) => {
