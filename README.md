@@ -5,9 +5,9 @@
 ## Description
 MEDiSEARCH is a dynamic hospital management tool that provides an efficient way to manage organization-related and medical-related information within ONE app. This application is for internal use only.
 
-Please use the following credentials to test the application:
-username = testuser
-password = test1234
+## Please use the following credentials to test the application:
+### username = testuser
+### password = test1234
 
 ### URL
 
