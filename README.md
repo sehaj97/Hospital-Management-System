@@ -246,8 +246,7 @@ Add the following json body as example for post request
 2. Using the above installed software test, replace the above mentioned URLs heroku address before '/' with localhost:3001.
 
 ## Screenshots
-![medisearch-adminpage](https://user-images.githubusercontent.com/88293666/144766460-4f2270cf-22f3-4082-992e-11dba8e18cb1.jpg)
-![medisearch-homepage](https://user-images.githubusercontent.com/88293666/144766463-e604aa7b-aa0f-4541-b2a3-a1ad21c98569.jpg)
+![medisearch-adminpage](./public/images/sc.png)
 
 ## Contributors
 ### Please feel free to contact us with any questions
