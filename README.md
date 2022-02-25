@@ -243,6 +243,9 @@ Add the following json body as example for post request
 
 ## Contributors
 ### Please feel free to contact us with any questions
+* Sehajpreet Singh |
+  Contact email: sehajmagan@gmail.com |
+  GitHub: [Sehaj97](https://github.com/sehaj97)
 * Ravneet Panglia |
   Contact email: ravneetpanglia@gmail.com |
   GitHub: [rpanglia](https://github.com/rpanglia)
@@ -252,9 +255,6 @@ Add the following json body as example for post request
 * Scott Bradley |
   Contact email: scottabradley91@gmail.com |
   GitHub: [ScalexanderB](https://github.com/ScalexanderB)
-* Sehajpreet Singh |
-  Contact email: sehajmagan@gmail.com |
-  GitHub: [Sehaj97](https://github.com/sehaj97)
 
 ## License
 This project is unlicensed.
